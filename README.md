@@ -17,4 +17,4 @@ This `config/event-bridge.php` contains other configs required by `EventBridgeSe
 **NOTE:** if you will use this package for multiple applications should have the same classes of events and serializers, etc in order to have correct communication.
 For example: you can not use `XmlSerializer` for serialization in app1 and `JsonSerializer` in app2 for deserialization.
 So if you want to build your own stuff based on this package you can fork this one, add things and use your package in your apps instead of this one.
-If you will not use it for multiply apps, feel free to create your own implementation in your project directory without forking.
+If you will not use it for multiple apps, feel free to create your own implementation in your project directory without forking.
