@@ -64,7 +64,7 @@ class EventBridgeServiceProvider extends ServiceProvider
 
         $this->app->singleton(EventHandlerInterface::class, function ($app) {
             return new $app->config['event-bridge.event_handler'](
-                $app->config['event-bridge.handlers']
+                $app->config['event-bridge.listeners']
             );
         });
 
