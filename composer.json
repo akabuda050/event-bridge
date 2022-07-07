@@ -1,0 +1,57 @@
+{
+    "name": "jsonbaby/event-bridge",
+    "description": "",
+    "keywords": [
+        "jsonbaby",
+        "event-bridge"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Olexandr Dolbin",
+            "email": "olexandr.dolbin@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "illuminate/support": "^9.0",
+        "predis/predis": "^1.1.9|^2.0",
+        "jsonbaby/events-base": "dev-main",
+        "symfony/serializer": "^6.1",
+        "symfony/property-access": "^6.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.1",
+        "phpunit/phpunit": "^9.5.8"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "JsonBaby\\EventBridge\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JsonBaby\\EventBridge\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=event-bridge-config --ansi --force"
+        ],
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JsonBaby\\EventBridge\\EventBridgeServiceProvider"
+            ]
+        }
+    }
+}
