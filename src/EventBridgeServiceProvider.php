@@ -51,7 +51,7 @@ class EventBridgeServiceProvider extends ServiceProvider
         });
 
         $this->app->singleton(PubSubConnectionInterface::class, function ($app) {
-            return new $app->config['event-bridge.pubsub.connection.enitity'](
+            return new $app->config['event-bridge.pubsub.connection.entity'](
                 $app->make($app->config['event-bridge.pubsub.connection.provider'])
             );
         });
