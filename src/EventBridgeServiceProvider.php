@@ -3,6 +3,7 @@
 namespace JsonBaby\EventBridge;
 
 use Illuminate\Support\ServiceProvider;
+use JsonBaby\EventBridge\Console\InstallEventBridgeCommand;
 use JsonBaby\EventBridge\Interfaces\PubSubConnectionInterface;
 use JsonBaby\EventBridge\Interfaces\EventPubSubInterface;
 use JsonBaby\EventBridge\Interfaces\EventSerializerInterface;
@@ -19,6 +20,10 @@ class EventBridgeServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/event-bridge.php' => config_path('event-bridge.php'),
             ], 'event-bridge-config');
+
+            $this->commands([
+                InstallEventBridgeCommand::class,
+            ]);
         }
     }
 
