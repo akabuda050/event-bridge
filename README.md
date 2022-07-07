@@ -105,7 +105,7 @@ Out of the box we use Redis in order to publish and subscribe. So you need to se
 
 ## Example multi apps
 
-Out of the box we use Redis in order to publish and subscribe. So you need to setup Redis in your apps as well.
+Out of the box we use Redis in order to publish and subscribe. So you need to setup Redis(should be shared between all apps) in your apps as well.
 
 - App 1
   - Install package `composer require jsonbaby/event-bridge`
