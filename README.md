@@ -110,7 +110,8 @@ Out of the box we use Redis in order to publish and subscribe. So you need to se
 - App 1
   - Install package `composer require jsonbaby/event-bridge`
   - Add your centralized events package to project like `composer require foo/bar-events` or as `git` package
-
+  - Publish your event
+  
     ```php
     use Foo\Bar\AcmeEvent;
     
