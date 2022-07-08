@@ -2,13 +2,13 @@
 
 namespace JsonBaby\EventBridge\Tests\Unit;
 
+use stdClass;
+use JsonBaby\EventBridge\Tests\TestCase;
 use JsonBaby\EventBridge\EventBridgeServiceProvider;
 use JsonBaby\EventBridge\Interfaces\EventHandlerInterface;
 use JsonBaby\EventBridge\Interfaces\EventPubSubInterface;
-use JsonBaby\EventBridge\Interfaces\EventSerializerInterface;
-use JsonBaby\EventBridge\Interfaces\PubSubConnectionInterface;
-use JsonBaby\EventBridge\Tests\TestCase;
-use stdClass;
+use JsonBaby\EventBridge\Interfaces\Serializers\EventSerializerInterface;
+use JsonBaby\EventBridge\Interfaces\Connections\PubSubConnectionInterface;
 
 class EventBridgeServiceProviderTest extends TestCase
 {

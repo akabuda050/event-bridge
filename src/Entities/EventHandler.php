@@ -2,8 +2,8 @@
 
 namespace JsonBaby\EventBridge\Entities;
 
-use JsonBaby\EventBridge\Interfaces\EventHandlerInterface;
 use JsonBaby\EventBase\Interfaces\EventInterface;
+use JsonBaby\EventBridge\Interfaces\EventHandlerInterface;
 
 class EventHandler implements EventHandlerInterface
 {

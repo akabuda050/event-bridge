@@ -1,11 +1,11 @@
 <?php
 
-namespace JsonBaby\EventBridge\Entities;
+namespace JsonBaby\EventBridge\Entities\Serializers;
 
-use JsonBaby\EventBase\Interfaces\EventInterface;
-use JsonBaby\EventBridge\Interfaces\EventSerializerInterface;
 use SimpleXMLElement;
 use Symfony\Component\Serializer\SerializerInterface;
+use JsonBaby\EventBase\Interfaces\EventInterface;
+use JsonBaby\EventBridge\Interfaces\Serializers\EventSerializerInterface;
 
 class XmlEventSerializer implements EventSerializerInterface
 {

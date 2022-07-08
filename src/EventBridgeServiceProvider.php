@@ -4,10 +4,10 @@ namespace JsonBaby\EventBridge;
 
 use Illuminate\Support\ServiceProvider;
 use JsonBaby\EventBridge\Console\InstallEventBridgeCommand;
-use JsonBaby\EventBridge\Interfaces\PubSubConnectionInterface;
 use JsonBaby\EventBridge\Interfaces\EventPubSubInterface;
-use JsonBaby\EventBridge\Interfaces\EventSerializerInterface;
 use JsonBaby\EventBridge\Interfaces\EventHandlerInterface;
+use JsonBaby\EventBridge\Interfaces\Connections\PubSubConnectionInterface;
+use JsonBaby\EventBridge\Interfaces\Serializers\EventSerializerInterface;
 
 class EventBridgeServiceProvider extends ServiceProvider
 {

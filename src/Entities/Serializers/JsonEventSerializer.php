@@ -1,10 +1,10 @@
 <?php
 
-namespace JsonBaby\EventBridge\Entities;
+namespace JsonBaby\EventBridge\Entities\Serializers;
 
 use JsonBaby\EventBase\Interfaces\EventInterface;
-use JsonBaby\EventBridge\Interfaces\EventSerializerInterface;
-use JsonBaby\EventBridge\Interfaces\SerializerInterface;
+use JsonBaby\EventBridge\Interfaces\Serializers\SerializerInterface;
+use JsonBaby\EventBridge\Interfaces\Serializers\EventSerializerInterface;
 
 class JsonEventSerializer implements EventSerializerInterface
 {

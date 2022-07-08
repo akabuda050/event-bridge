@@ -2,15 +2,15 @@
 
 return [
     'serializer' => [
-        'entity' => JsonBaby\EventBridge\Entities\JsonEventSerializer::class,
-        'provider' => JsonBaby\EventBridge\Entities\SymfonySerializer::class,
+        'entity' => JsonBaby\EventBridge\Entities\Serializers\JsonEventSerializer::class,
+        'provider' => JsonBaby\EventBridge\Entities\Serializers\SymfonySerializer::class,
     ],
 
     'event_handler' => JsonBaby\EventBridge\Entities\EventHandler::class,
 
     'pubsub' =>  [
-        'entity' => JsonBaby\EventBridge\Entities\RedisEventPubSub::class,
-        'provider' => JsonBaby\EventBridge\Entities\RedisConnection::class
+        'entity' => JsonBaby\EventBridge\Entities\EventPubSub::class,
+        'provider' => JsonBaby\EventBridge\Entities\Connections\RedisConnection::class
     ],
 
     'listeners' => [

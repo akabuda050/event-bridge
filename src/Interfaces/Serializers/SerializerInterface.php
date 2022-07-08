@@ -1,6 +1,6 @@
 <?php
 
-namespace JsonBaby\EventBridge\Interfaces;
+namespace JsonBaby\EventBridge\Interfaces\Serializers;
 
 interface SerializerInterface
 {

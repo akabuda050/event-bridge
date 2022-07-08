@@ -1,10 +1,10 @@
 <?php
 
-namespace JsonBaby\EventBridge\Entities;
+namespace JsonBaby\EventBridge\Entities\Connections;
 
 use Closure;
 use Illuminate\Contracts\Redis\Connection;
-use JsonBaby\EventBridge\Interfaces\PubSubConnectionInterface;
+use JsonBaby\EventBridge\Interfaces\Connections\PubSubConnectionInterface;
 
 class RedisConnection implements PubSubConnectionInterface
 {

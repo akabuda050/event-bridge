@@ -1,12 +1,12 @@
 <?php
 
-namespace JsonBaby\EventBridge\Entities;
+namespace JsonBaby\EventBridge\Entities\Serializers;
 
-use JsonBaby\EventBridge\Interfaces\SerializerInterface;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use JsonBaby\EventBridge\Interfaces\Serializers\SerializerInterface;
 
 class SymfonySerializer implements SerializerInterface
 {
