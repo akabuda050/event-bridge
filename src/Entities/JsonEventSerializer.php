@@ -4,7 +4,7 @@ namespace JsonBaby\EventBridge\Entities;
 
 use JsonBaby\EventBase\Interfaces\EventInterface;
 use JsonBaby\EventBridge\Interfaces\EventSerializerInterface;
-use Symfony\Component\Serializer\SerializerInterface;
+use JsonBaby\EventBridge\Interfaces\SerializerInterface;
 
 class JsonEventSerializer implements EventSerializerInterface
 {

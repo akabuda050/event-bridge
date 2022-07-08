@@ -27,19 +27,13 @@ class EventBridgeServiceProviderTest extends TestCase
             ]
         ]);
 
+        $app->config->set('event-bridge.pubsub.entity', stdClass::class);
+        $app->config->set('event-bridge.pubsub.provider', stdClass::class);
+
         $app->config->set('event-bridge.serializer.entity', stdClass::class);
-        $app->config->set('event-bridge.serializer.provider.contract', stdClass::class);
-        $app->config->set('event-bridge.serializer.provider.concrete.encoders', [stdClass::class]);
-        $app->config->set('event-bridge.serializer.provider.concrete.normalizers', [stdClass::class]);
-        $app->config->set('event-bridge.serializer.provider.concrete.entity', stdClass::class);
+        $app->config->set('event-bridge.serializer.provider', stdClass::class);
 
         $app->config->set('event-bridge.event_handler', stdClass::class);
-
-        $app->config->set('event-bridge.pubsub.connection.entity', stdClass::class);
-        $app->config->set('event-bridge.pubsub.connection.provider', stdClass::class);
-        $app->config->set('event-bridge.pubsub.entity', stdClass::class);
-        $app->config->set('event-bridge.pubsub.connection.entity', stdClass::class);
-        $app->config->set('event-bridge.pubsub.connection.provider', stdClass::class);
     }
 
     /** @test */

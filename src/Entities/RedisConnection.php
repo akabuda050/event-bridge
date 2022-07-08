@@ -8,9 +8,11 @@ use JsonBaby\EventBridge\Interfaces\PubSubConnectionInterface;
 
 class RedisConnection implements PubSubConnectionInterface
 {
-    public function __construct(
-        private Connection $connection
-    ) {
+    private Connection $connection;
+
+    public function __construct()
+    {
+        $this->connection = app()->make('redis.connection');
     }
 
     public function publish(string $channel, string $data): void

@@ -36,29 +36,14 @@ class EventBridgeServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/event-bridge.php', 'event-bridge');
 
         // Register the main class to use with the facade
-        $this->app->singleton($this->app->config['event-bridge.serializer.provider.contract'], function ($app) {
-            $encoders = [];
-            foreach($app->config['event-bridge.serializer.provider.concrete.encoders'] as $encoder){
-                $encoders[] = new $encoder();
-            }
-
-            $normalizers = [];
-            foreach($app->config['event-bridge.serializer.provider.concrete.normalizers'] as $normalizer){
-                $normalizers[] = new $normalizer();
-            }
-
-            return new $app->config['event-bridge.serializer.provider.concrete.entity']($normalizers, $encoders);
-        });
 
         $this->app->singleton(PubSubConnectionInterface::class, function ($app) {
-            return new $app->config['event-bridge.pubsub.connection.entity'](
-                $app->make($app->config['event-bridge.pubsub.connection.provider'])
-            );
+            return new $app->config['event-bridge.pubsub.provider']();
         });
 
         $this->app->singleton(EventSerializerInterface::class, function ($app) {
             return new $app->config['event-bridge.serializer.entity'](
-                $app->make($app->config['event-bridge.serializer.provider.contract'])
+                $app->make($app->config['event-bridge.serializer.provider'])
             );
         });
 
