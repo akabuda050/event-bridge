@@ -14,7 +14,7 @@ class SymfonySerializer implements SerializerInterface
 
     public function __construct()
     {
-        $this->serializer = new Serializer([new XmlEncoder(), new JsonEncoder()], [new ObjectNormalizer()]);
+        $this->serializer = new Serializer([new ObjectNormalizer(), [new XmlEncoder(), new JsonEncoder()]]);
     }
     
     public function serialize(mixed $data, string $format, array $context = []): string
