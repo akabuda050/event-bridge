@@ -19,15 +19,32 @@ class EventBridgeServiceProviderTest extends TestCase
         ];
     }
 
-    /** @test */
-    public function it_can_use_listeners_from_config()
+    protected function getEnvironmentSetUp($app)
     {
-        $this->app->config->set('event-bridge.listeners', [
+        $app->config->set('event-bridge.listeners', [
             stdClass::class => [
                 stdClass::class
             ]
         ]);
 
+        $app->config->set('event-bridge.serializer.entity', stdClass::class);
+        $app->config->set('event-bridge.serializer.provider.contract', stdClass::class);
+        $app->config->set('event-bridge.serializer.provider.concrete.encoders', [stdClass::class]);
+        $app->config->set('event-bridge.serializer.provider.concrete.normalizers', [stdClass::class]);
+        $app->config->set('event-bridge.serializer.provider.concrete.entity', stdClass::class);
+
+        $app->config->set('event-bridge.event_handler', stdClass::class);
+
+        $app->config->set('event-bridge.pubsub.connection.entity', stdClass::class);
+        $app->config->set('event-bridge.pubsub.connection.provider', stdClass::class);
+        $app->config->set('event-bridge.pubsub.entity', stdClass::class);
+        $app->config->set('event-bridge.pubsub.connection.entity', stdClass::class);
+        $app->config->set('event-bridge.pubsub.connection.provider', stdClass::class);
+    }
+
+    /** @test */
+    public function it_can_use_listeners_from_config()
+    {
         self::assertSame(
             [
                 stdClass::class => [
@@ -41,8 +58,6 @@ class EventBridgeServiceProviderTest extends TestCase
     /** @test */
     public function it_can_resolve_serializer()
     {
-        $this->app->config->set('event-bridge.serializer.entity', stdClass::class);
-        
         self::assertInstanceOf(
             stdClass::class,
             $this->app->make(EventSerializerInterface::class)
@@ -52,9 +67,6 @@ class EventBridgeServiceProviderTest extends TestCase
     /** @test */
     public function it_can_resolve_pubsub_connection()
     {
-        $this->app->config->set('event-bridge.pubsub.connection.entity', stdClass::class);
-        $this->app->config->set('event-bridge.pubsub.connection.provider', stdClass::class);
-
         self::assertInstanceOf(
             stdClass::class,
             $this->app->make(PubSubConnectionInterface::class)
@@ -65,10 +77,6 @@ class EventBridgeServiceProviderTest extends TestCase
     /** @test */
     public function it_can_resolve_pub_sub()
     {
-        $this->app->config->set('event-bridge.pubsub.entity', stdClass::class);
-        $this->app->config->set('event-bridge.pubsub.connection.entity', stdClass::class);
-        $this->app->config->set('event-bridge.pubsub.connection.provider', stdClass::class);
-
         self::assertInstanceOf(
             stdClass::class,
             $this->app->make(EventPubSubInterface::class)
@@ -78,8 +86,6 @@ class EventBridgeServiceProviderTest extends TestCase
     /** @test */
     public function it_can_resolve_event_handler()
     {
-        $this->app->config->set('event-bridge.event_handler', stdClass::class);
-
         self::assertInstanceOf(
             stdClass::class,
             $this->app->make(EventHandlerInterface::class)
