@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 
 class InstallEventBridgeCommand extends Command
 {
-    protected $signature = 'eventbridge:install';
+    protected $signature = 'event-bridge:install';
 
     protected $description = 'Install the EventBridge';
 
