@@ -11,7 +11,7 @@ class InstallEventBridgeCommand extends Command
 
     protected $description = 'Install the EventBridge';
 
-    public function handle()
+    public function handle(): void
     {
         $this->info('Installing EventBridge...');
 
@@ -32,12 +32,12 @@ class InstallEventBridgeCommand extends Command
         $this->info('Installed EventBridge');
     }
 
-    private function configExists($fileName)
+    private function configExists(string $fileName): bool
     {
         return File::exists(config_path($fileName));
     }
 
-    private function shouldOverwriteConfig()
+    private function shouldOverwriteConfig(): bool
     {
         return $this->confirm(
             'Config file already exists. Do you want to overwrite it?',
@@ -45,7 +45,7 @@ class InstallEventBridgeCommand extends Command
         );
     }
 
-    private function publishConfiguration($forcePublish = false)
+    private function publishConfiguration(bool $forcePublish = false): void
     {
         $params = [
             '--tag' => "event-bridge-config"

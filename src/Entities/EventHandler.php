@@ -12,7 +12,7 @@ class EventHandler implements EventHandlerInterface
     {
     }
 
-    public function handle(EventInterface $event, $channel)
+    public function handle(EventInterface $event, $channel): void
     {
         $class = get_class($event);
         if (isset($this->handlers[$class])) {
