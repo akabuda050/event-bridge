@@ -34,6 +34,9 @@ jobs:
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
+    
+    - name: Run pslam
+      run: composer run psalm
 
     - name: Run test suite
       run: composer run test
