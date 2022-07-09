@@ -7,6 +7,8 @@ Redis is used out of the box.
 
 `composer require jsonbaby/event-bridge`
 
+`php artisan event-bridge:install`
+
 ## Usage
 In order to get this work you should have a centralized store of your events(package, repository, etc), so you can use it between your applications.(for communication between multiple apps).
 
